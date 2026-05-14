@@ -9,6 +9,10 @@
       h1 {
         color: gold;
       }
+
+      #food-title{
+        color: green;
+      }
     </style>
   </head>
   <body>
@@ -20,9 +24,22 @@
         <h1>Welcome to my DOM</h1>
         <ul>
           <li>Shafayet</li>
-          <li>Bonobash</li>
-          <li>Jalali Set</li>
+          <li class="foreign">Bonobash</li>
+          <li id="band">Jalali Set</li>
+          <li class="international">Dubai</li>
           <li>DOM de re baba</li>
+        </ul>
+      </section>
+      <section>
+        <h1 id="food-title">Foods I love</h1>
+        <ul>
+            <li>Rice</li>
+            <li>Potato</li>
+            <li>Fish</li>
+            <li>Lentils</li>
+            <li class="foreign">Burger</li>
+            <li class="foreign">Pizza</li>
+            <li class="foreign">Pasta</li>
         </ul>
       </section>
     </main>
@@ -42,23 +59,42 @@
       // document.getElementsByTagName
 
       const liCollection = document.getElementsByTagName("li");
-      console.log(liCollection);
+    //   console.log(liCollection);
 
       for (const li of liCollection) {
-        console.log(li.innerText);
+        // console.log(li.innerText);
       }
 
       // all h1 tags
 
       const allHeadings = document.getElementsByTagName("h1");
       for (const heading of allHeadings) {
-        console.log(heading.innerText);
+        // console.log(heading.innerText);
       }
 
       const paragraph = document.getElementsByTagName("p");
       for (const p of paragraph) {
-        console.log(p.innerText);
+        // console.log(p.innerText);
       }
+
+      // get by id
+      const foodTitleH1 = document.getElementById('food-title');
+      console.log(foodTitleH1.innerText);
+      foodTitleH1.innerText = 'Food I loved to Eat';
+
+      const bandElement = document.getElementById('band');
+      bandElement.innerText = 'Jalali Sleeping Band'
+      
+
+      // get element by class name
+      const foreignElements = document.getElementsByClassName('foreign');
+      console.log(foreignElements);
+      for(const element of foreignElements){
+        console.log(element.innerText);
+        
+      }
+
+
     </script>
     <script src="js/hello.js"></script>
   </body>
